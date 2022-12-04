@@ -1,0 +1,370 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Love Hotel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/gijgo.css">
+   <link rel="stylesheet" href="assets/css/slicknav.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+   <link rel="stylesheet" href="assets/css/themify-icons.css">
+   <link rel="stylesheet" href="assets/css/themify-icons.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <style>
+          #container {
+        width: 1000px;
+        height: 400px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+      }
+   </style>
+</head>
+
+<body>
+    
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <strong>Love Hotel</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-sticky">
+            <div class="main-header ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- logo -->
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                               <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                    <div class="col-xl-8 col-lg-8">
+                            <!-- main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="index.html">网站首页</a></li>
+                                        <li><a href="about.html">关于我们</a></li>
+                                        <li><a href="rooms.html">房间详情</a></li>
+                                        <li><a href="blog.html">走进我们</a></li>
+                                        <li><a href="scenery.html">海南美景</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>             
+                        <div class="col-xl-2 col-lg-2">
+                            <!-- header-btn -->
+                            <div class="header-btn">
+                                <a href="contact.html" class="btn btn1 d-none d-lg-block ">联系我们</a>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <!-- slider Area Start-->
+    <div class="slider-area">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/contact_hero.jpg" >
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="hero-caption">
+                            <span>Love Hotel</span>
+                            <h2>联系我们</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+
+    <!-- ================ contact section start ================= -->
+    <div id="container"></div>
+    <script>
+      const guide = `
+        https://lbs.amap.com/
+        登录上面网址进入高德开放平台 -> 注册登录 -> 登录后点击顶部控制台 -> 
+        点击应用管理 -> 我的应用 -> 创建应用 -> 选择应用点击添加 -> 获取 key 值 -> 
+        更改 下面script 标签的 key 值(key= 登录注册后的 key 值)
+
+        https://lbs.amap.com/api/webservice/guide/create-project/get-key
+        获取 key 的开发指南
+      `
+    </script>
+    <script
+      type="text/javascript"
+      src=https://webapi.amap.com/maps?v=1.4.15&key=283e583cb0bc30fe930eb6ecf87f3c43"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cache.amap.com/lbs/static/addToolbar.js"
+    ></script>
+    <script type="text/javascript">
+      const guide2 = `
+        https://lbs.amap.com/tools/picker 
+        打开上面网址获取经纬度，更改下面 center 数组的值，地图就会显示在该位置
+      `
+      const map = new AMap.Map("container", {
+        // 放大倍数
+        zoom: 17,
+        // 坐标，经纬度
+        center: [110.474626,19.251004],
+        // 地图的热点
+        isHotspot: true,
+      });
+      const marker = new AMap.Marker({
+        position: new AMap.LngLat(110.474626,19.251004), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: "Love Hotel",
+      });
+
+      // 设置标记图标
+    //   marker.setIcon('//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png')
+      // 将创建的点标记添加到已有的地图实例：
+      map.add(marker);
+
+
+      const infoWindow = new AMap.InfoWindow({});
+      //回调函数
+      function placeSearch_CallBack(data) {
+        const poiArr = data.poiList.pois;
+        const location = poiArr[0].location;
+        infoWindow.open(map, location);
+      }
+    </script>
+    <div class="row" style="width: 1000px; margin:auto;margin-bottom:50px">
+        <div class="col-12">
+            <h2 class="contact-title">联系我们</h2>
+        </div>
+        <div class="col-lg-8">
+            <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" 请输入消息"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="请输入你的名字">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="请输入主题">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="button button-contactForm boxed-btn">发送</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 offset-lg-1">
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-home"></i></span>
+                <div class="media-body">
+                    <h3>海南省</h3>
+                    <p>海口市，琼海市，三亚市，东方市，三沙市 Love Hotel</p>
+                </div>
+            </div>
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                <div class="media-body">
+                    <h3>+123456789</h3>
+                    <p>周一 至 周五 上午9：00-下午5：00</p>
+                </div>
+            </div>
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-email"></i></span>
+                <div class="media-body">
+                    <h3>hainanLoveHotel@Email.com</h3>
+                    <p>请随时联系我们！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+    <!-- ================ contact section end ================= -->
+    
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area black-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                       <div class="single-footer-caption mb-30">
+                          <!-- logo -->
+                          <div class="footer-logo">
+                            <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                          </div>
+                          <div class="footer-social footer-social2">
+                              <a href="#"><i class="fab fa-qq"></i></a>
+                              <a href="#"><i class="fab fa-weixin"></i></a>
+                              <a href="#"><i class="fas fa-globe"></i></a>
+                              <a href="#"><i class="fab fa-apple"></i></a>
+                          </div>
+                          <div class="footer-pera">
+                               <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Love Hotel 所有<i class="ti-heart" aria-hidden="true"></i>
+   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>快速访问</h4>
+                                <ul>
+                                    <li><a href="#">关于Love Hotel</a></li>
+                                    <li><a href="#">我们最好的房间</a></li>
+                                    <li><a href="#">我们的照片库</a></li>
+                                    <li><a href="#">泳池服务</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>快速预约</h4>
+                                <ul>
+                                    <li><a href="#">Tel: 123 123 123</a></li>
+                                    <li><a href="#">微信公众号: Love Hotel</a></li>
+                                    <li><a href="#">hainanLoveHotel@Email.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4  col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>地址详情</h4>
+                                <ul>
+                                    <li><a href="#">海南省</a></li>
+                                    <li><a href="#">海口市，琼海市，三亚市，东方市，三沙市 Love Hotel</a></li>
+                                </ul>
+                                <!-- Form -->
+                                 <div class="footer-form" >
+                                     <div id="mc_embed_signup">
+                                         <form target="_blank" action="#"
+                                         method="get" class="subscribe_form relative mail_part">
+                                             <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                             class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                             onblur="this.placeholder = ' Email Address '">
+                                             <div class="form-icon">
+                                               <button type="submit" name="submit" id="newsletter-submit"
+                                               class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.jpg" alt=""></button>
+                                             </div>
+                                             <div class="mt-10 info"></div>
+                                         </form>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <!-- Date Picker -->
+        <script src="./assets/js/gijgo.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+		
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+
+        <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+        </script>
+    </body>
+    
+    </html>
